@@ -6,8 +6,8 @@ import { CognitoAuthRole } from './CognitoAuthRole';
 
 export function buildCognitoEnterpriseAuth(scope: Construct, bucketArn: string) {
 
-  const cognito = new UserPool(scope, "liberta-track-enterprise-pool", {
-    userPoolName: 'liberta-track-enterprise-pool',
+  const cognito = new UserPool(scope, "MakerBot-enterprise-pool", {
+    userPoolName: 'MakerBot-enterprise-pool',
     signInAliases: {
       email: true,
       username: false
@@ -28,7 +28,7 @@ export function buildCognitoEnterpriseAuth(scope: Construct, bucketArn: string) 
     },
     autoVerify: { email: true },
     userVerification: {
-      emailSubject: 'You need to verify your email to access LibertaTrack.',
+      emailSubject: 'You need to verify your email to access MakerBot.',
       emailBody: 'Thanks for signing up Your verification code is {####}',
       emailStyle: VerificationEmailStyle.CODE,
     },
@@ -42,7 +42,7 @@ export function buildCognitoEnterpriseAuth(scope: Construct, bucketArn: string) 
     removalPolicy: RemovalPolicy.DESTROY,
   })
 
-  const userPoolClient = new UserPoolClient(scope, "liberta-track-enterprise-client", {
+  const userPoolClient = new UserPoolClient(scope, "MakerBot-enterprise-client", {
     userPool: cognito,
     authFlows: {
       userPassword: true,
@@ -58,7 +58,7 @@ export function buildCognitoEnterpriseAuth(scope: Construct, bucketArn: string) 
     },
   });
 
-  const identityPool = new CfnIdentityPool(scope, "liberta-track-enterprise-identity-pool", {
+  const identityPool = new CfnIdentityPool(scope, "MakerBot-enterprise-identity-pool", {
     allowUnauthenticatedIdentities: false,
     cognitoIdentityProviders: [
       {

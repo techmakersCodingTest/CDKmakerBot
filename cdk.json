@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/liberta-track-cdk.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/MakerBot-cdk.ts",
   "watch": {
     "include": [
       "**"

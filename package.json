@@ -1,8 +1,8 @@
 {
-  "name": "liberta-track-cdk",
+  "name": "MakerBot-cdk",
   "version": "0.1.0",
   "bin": {
-    "liberta-track-cdk": "bin/liberta-track-cdk.js"
+    "MakerBot-cdk": "bin/MakerBot-cdk.js"
   },
   "scripts": {
     "build": "tsc",

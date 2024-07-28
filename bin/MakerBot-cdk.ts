@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { LibertaTrackCdkStack } from '../lib/liberta-track-cdk-stack';
+import { MakerBotCdkStack } from '../lib/makerbot-cdk-stack';
 
 const app = new cdk.App();
-new LibertaTrackCdkStack(app, 'LibertaTrackCdkStack', {
+new MakerBotCdkStack(app, 'MakerBotCdkStack', {
   env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-
 });
